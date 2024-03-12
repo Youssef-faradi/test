@@ -15,3 +15,4 @@ Route::get("/home/show/{home}", [HomeController::class, "show"])->name("home.sho
 
 //& put
 Route::put("/home/update/{home}" , [HomeController::class , "update"])->name("home.update");
+Route::delete("/home/delete/{home}",[HomeController::class ,"destroy"])->name("home.destroy");

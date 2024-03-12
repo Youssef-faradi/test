@@ -47,4 +47,10 @@ class HomeController extends Controller
         ]);
         return redirect()->route("home.index");
     }
+
+    public function destroy(Home $home){
+        $home->delete();
+        return redirect()->route("home.index");
+
+    }
 }

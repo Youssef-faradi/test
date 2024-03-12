@@ -10,4 +10,9 @@
     <h1>Name :{{ $home->name }}</h1>  
     <h1>Age :{{ $home->age }}</h1>   
     <a href="{{ route("home.show", $home) }}">about</a>
+    <form action="{{ route("home.destroy",$home) }}" method="post">
+        @csrf
+        @method("DELETE")
+        <button>delete</button>
+    </form>
 @endforeach
