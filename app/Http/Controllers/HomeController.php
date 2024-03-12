@@ -28,4 +28,23 @@ class HomeController extends Controller
         return redirect()->back();
 
     }
+    public function show(Home $home)
+    {
+        return view("home.components.show_section1", compact("home"));
+    }
+
+    public function update(Request $request ,Home $home){
+
+        request()->validate([
+            "name" => "required",
+            "age" => "required"
+        ]);
+
+        $home->update([
+            "name"=> $request->name,
+            "age"=> $request->age,
+
+        ]);
+        return redirect()->route("home.index");
+    }
 }
